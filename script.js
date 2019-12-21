@@ -1,6 +1,6 @@
 const socket = io("http://localhost:3000");
 const messageContainer = document.getElementById("message-container");
-const messageInput = document.getElementsById("message-input");
+const messageInput = document.getElementById("message-input");
 const messageForm = document.getElementById("second-container");
 
 const name = prompt("Create username");
