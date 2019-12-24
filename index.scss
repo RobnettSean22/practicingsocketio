@@ -1,0 +1,57 @@
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: rgb(48, 48, 48);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  #user-log {
+    width: 25%;
+    height: 100%;
+    background: rgb(90, 90, 90);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    h1 {
+      font-size: 20px;
+    }
+  }
+  #message-container {
+    width: 75%;
+    height: 80%;
+    #second-container {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      .message-submission {
+        width: 100%;
+        height: 6%;
+
+        margin-bottom: 8%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-self: flex-end;
+        #message-input {
+          width: 40%;
+          height: 90%;
+          border-radius: 3px;
+          &:focus {
+            outline: none;
+          }
+        }
+        #init {
+          width: 10%;
+          height: 103%;
+          margin-left: 0.1%;
+          z-index: 2;
+
+          background: rgb(72, 167, 255);
+        }
+      }
+    }
+  }
+}

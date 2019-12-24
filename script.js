@@ -2,6 +2,7 @@ const socket = io("http://localhost:3000");
 const messageContainer = document.getElementById("message-container");
 const messageInput = document.getElementById("message-input");
 const messageForm = document.getElementById("second-container");
+const existedUser = document.getElementById("user-log");
 
 const name = prompt("Create username");
 appendMessage("you joined");
@@ -27,4 +28,9 @@ function appendMessage(message) {
   const messageElement = document.createElement("div");
   messageElement.innerText = message;
   messageContainer.append(messageElement);
+}
+function appendMessage(name) {
+  const nameLock = document.createElement("div");
+  nameLock.innerText = name;
+  existedUser.append(nameLock);
 }
