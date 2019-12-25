@@ -6,15 +6,24 @@ const existedUser = document.getElementById("user-log");
 
 const name = prompt("Create username");
 appendMessage("you joined");
+const user = document.createElement("div");
+user.innerText = name;
+existedUser.append(user);
+
 socket.emit("new-user", name);
 socket.on("chat-message", data => {
   appendMessage(`${data.name}:${data.message}`);
 });
 socket.on("user-connected", name => {
-  appendMessage(`${name} connected`);
+  const otherUser = document.createElement("div");
+  otherUser.innerText = name;
+  existedUser.append(name);
 });
+
 socket.on("user-disconnected", name => {
-  appendMessage(`${name} disconnected`);
+  const otherUser = document.createElement("div");
+  otherUser.innerText = name;
+  append(`${name} disconnected`);
 });
 
 messageForm.addEventListener("submit", e => {
@@ -24,13 +33,9 @@ messageForm.addEventListener("submit", e => {
   socket.emit("send-chat-message", message);
   messageInput.value = "";
 });
+
 function appendMessage(message) {
   const messageElement = document.createElement("div");
   messageElement.innerText = message;
   messageContainer.append(messageElement);
-}
-function appendMessage(name) {
-  const nameLock = document.createElement("div");
-  nameLock.innerText = name;
-  existedUser.append(nameLock);
 }
