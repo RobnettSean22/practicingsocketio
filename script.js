@@ -21,9 +21,7 @@ socket.on("user-connected", name => {
 });
 
 socket.on("user-disconnected", name => {
-  const otherUser = document.createElement("div");
-  otherUser.innerText = name;
-  append(`${name} disconnected`);
+  appendMessage(`${name} disconnected`);
 });
 
 messageForm.addEventListener("submit", e => {
