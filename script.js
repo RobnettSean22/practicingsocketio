@@ -34,6 +34,7 @@ messageForm.addEventListener("submit", e => {
 
 function appendMessage(message) {
   const messageElement = document.createElement("div");
+  messageElement.style.background = "blue";
   messageElement.innerText = message;
   messageContainer.append(messageElement);
 }
