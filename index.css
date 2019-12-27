@@ -51,6 +51,17 @@ body #message-container {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+body #message-container div {
+  background-color: white;
+  padding: 5px;
+}
+
+body #message-container div:nth-child(2n) {
+  background-color: #48a7ff;
 }
 
 body #message-controll {

@@ -23,18 +23,25 @@ socket.on("user-connected", name => {
 socket.on("user-disconnected", name => {
   appendMessage(`${name} disconnected`);
 });
+// function appendMessage(message) {
+//   const incommingMessage = doucment.createElement("div");
+//   incommingMessage.style.background = "red";
+//   incommingMessage.innerText = message;
+//   messageContainer.append(incommingMessage);
+// }
 
 messageForm.addEventListener("submit", e => {
   e.preventDefault();
   const message = messageInput.value;
   appendMessage(`You:${message}`);
   socket.emit("send-chat-message", message);
+
   messageInput.value = "";
 });
 
 function appendMessage(message) {
   const messageElement = document.createElement("div");
-  messageElement.style.background = "blue";
+  //   messageElement.style.background = "blue";
   messageElement.innerText = message;
   messageContainer.append(messageElement);
 }

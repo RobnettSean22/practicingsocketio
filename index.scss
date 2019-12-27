@@ -25,6 +25,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    overflow-x: hidden;
+    overflow-y: auto;
+    div {
+      background-color: white;
+      padding: 5px;
+      &:nth-child(2n) {
+        background-color: rgb(72, 167, 255);
+      }
+    }
   }
   #message-controll {
     width: 100%;
@@ -62,4 +71,6 @@ body {
       }
     }
   }
+
+  // #message-container div
 }
